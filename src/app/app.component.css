@@ -6,3 +6,7 @@
     display: inline-block;
     margin: 20px 5px;
 }
+
+button {
+    width: 40px;
+}
