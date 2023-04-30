@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calculadora';
+
+  // Posso criar um array de string que irá conter os resultados
+
+  getValue(evento: any) {
+    console.log(evento.target.value);
+    
+  }
 }

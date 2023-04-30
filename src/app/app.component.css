@@ -1,0 +1,8 @@
+.calculadora {
+    margin: 20px;
+}
+
+.calculadora>div {
+    display: inline-block;
+    margin: 20px 5px;
+}
