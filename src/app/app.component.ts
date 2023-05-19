@@ -8,10 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'calculadora';
 
+  operacoes: string = '/x-+';
+  digitadas: string = '';
+
   // Posso criar um array de string que irá conter os resultados
 
   getValue(evento: any) {
-    console.log(evento.target.value);
-    
+    const valor = String(evento.target.value);
+    var nada = '';
+    this.digitadas += valor;
   }
 }

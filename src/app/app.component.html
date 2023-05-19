@@ -1,8 +1,8 @@
+<div class="historico">
+  <p>{{ digitadas }}</p>
+</div>
 
 <div class="calculadora">
-  <div class="historico">
-    <p></p>
-  </div>
   <div class="numerais">
     <div>
       <button (click)="getValue($event)" value="1">1</button>
@@ -26,6 +26,23 @@
     </div>
   </div>
   <div class="operacores">
+    <div>
+      <button (click)="getValue($event)" value="/">/</button>
+    </div>
+    <div>
+      <button (click)="getValue($event)" value="x">x</button>
+    </div>
+    <div>
+      <button (click)="getValue($event)" value="-">-</button>
+    </div>
+    <div>
+      <button (click)="getValue($event)" value="+">+</button>
+    </div>
+  </div>
+  <div class="content">
+    <span>
+      calculadora app is running!
+    </span>
   </div>
 </div>
 
