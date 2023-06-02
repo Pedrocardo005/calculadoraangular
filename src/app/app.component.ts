@@ -10,8 +10,10 @@ export class AppComponent {
 
   operacoes: string = '/x-+';
   digitadas: string = '';
-
-  // Posso criar um array de string que irá conter os resultados
+  operacaoSelecionada: string = '';
+  primeiroNumero: string = '';
+  segundoNumero: string = '';
+  resultados: Number[] = [];
 
   getValue(evento: any) {
     const valor = String(evento.target.value);
@@ -29,17 +31,69 @@ export class AppComponent {
       return;
     }
 
-    if (valor === "=") {
-      // Percorrer digitadas até parar em uma operação
-      // Converter aqueles caracteres para número de fato
-      // Realizar a operação daqueles números
-      // Penso em realizar com uma função recursiva as operações 
+    if (this.operacoes.indexOf(valor) >= 0 && this.hasOperacao()) {
+      return;
     }
 
-    if (valor === "=" || valor === ".") {
+    // Divide o texto em número e operação
+    if (this.operacoes.indexOf(valor) >= 0) {
+          
+        this.operacaoSelecionada = valor;
+        this.primeiroNumero = this.digitadas;
+    }
+
+    if (valor === "=") {
+      let numeros = this.digitadas.split(this.operacaoSelecionada);
+
+      if (numeros.length !== 2) {
+        return;
+      }
+
+      this.segundoNumero = numeros[1];
+
+      switch (this.operacaoSelecionada) {
+        case '+':
+          let soma = Number(this.primeiroNumero) + Number(this.segundoNumero);
+          this.resultados.push(soma);
+          break;
+        
+        case '-':
+          let subtracao = Number(this.primeiroNumero) - Number(this.segundoNumero);
+          this.resultados.push(subtracao);
+          break;
+
+        case 'x':
+          let multiplicacao = Number(this.primeiroNumero) * Number(this.segundoNumero);
+          this.resultados.push(multiplicacao);
+          break;
+
+        case '/':
+          let divisao = Number(this.primeiroNumero) / Number(this.segundoNumero);
+          this.resultados.push(divisao);
+          break;
+      
+        default:
+          break;
+      }
+
+      this.digitadas = '';
+      return;
+    }
+
+    if (valor === ".") {
       return;
     }
     
     this.digitadas += valor;
+  }
+
+  hasOperacao() {
+    for (let i = 0; i < this.operacoes.length; i++) {
+      if (this.digitadas.indexOf(this.operacoes[i]) >= 0) {
+        return true;
+      }      
+    }
+
+    return false;
   }
 }

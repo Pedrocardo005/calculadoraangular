@@ -1,3 +1,9 @@
+<div>
+  <p *ngFor="let resultado of resultados">
+    {{ resultado }}
+  </p>
+</div>
+
 <div class="historico">
   <p>{{ digitadas }}</p>
 </div>
@@ -38,11 +44,6 @@
     <div>
       <button (click)="getValue($event)" value="+">+</button>
     </div>
-  </div>
-  <div class="content">
-    <span>
-      calculadora app is running!
-    </span>
   </div>
 </div>
 
