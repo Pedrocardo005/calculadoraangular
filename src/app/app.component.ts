@@ -36,6 +36,10 @@ export class AppComponent {
     const valor = String(event.target.value);
     
     this.digitadas += valor;
+
+    if (this.resultados.length > 1) {
+      this.resultados.shift();
+    }
   }
 
   doOperation() {

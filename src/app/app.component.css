@@ -4,6 +4,14 @@
     width: 40%;
 }
 
+.textos {
+    width: 250px;
+    height: 50px;
+    margin: 30px;
+    margin-bottom: 0px;
+    background-color: gray;
+}
+
 .calculadora {
     margin: 20px;
 }
