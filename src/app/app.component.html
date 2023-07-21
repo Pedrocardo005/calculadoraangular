@@ -1,49 +1,49 @@
-<div>
-  <p *ngFor="let resultado of resultados">
-    {{ resultado }}
-  </p>
-</div>
-
-<div class="historico">
-  <p>{{ digitadas }}</p>
-</div>
-
-<div class="calculadora">
-  <div class="numerais">
-    <div>
-      <button (click)="getValue($event)" value="1">1</button>
-      <button (click)="getValue($event)" value="2">2</button>
-      <button (click)="getValue($event)" value="3">3</button>
-    </div>
-    <div>
-      <button (click)="getValue($event)" value="4">4</button>
-      <button (click)="getValue($event)" value="5">5</button>
-      <button (click)="getValue($event)" value="6">6</button>
-    </div>
-    <div>
-      <button (click)="getValue($event)" value="7">7</button>
-      <button (click)="getValue($event)" value="8">8</button>
-      <button (click)="getValue($event)" value="9">9</button>
-    </div>
-    <div>
-      <button (click)="getValue($event)" value="0">0</button>
-      <button (click)="getValue($event)" value=".">.</button>
-      <button (click)="getValue($event)" value="=">=</button>
-    </div>
+<div class="box">
+  <div>
+    <p *ngFor="let resultado of resultados">
+      {{ resultado }}
+    </p>
   </div>
-  <div class="operacores">
-    <div>
-      <button (click)="getValue($event)" value="/">/</button>
-    </div>
-    <div>
-      <button (click)="getValue($event)" value="x">x</button>
-    </div>
-    <div>
-      <button (click)="getValue($event)" value="-">-</button>
-    </div>
-    <div>
-      <button (click)="getValue($event)" value="+">+</button>
-    </div>
+  
+  <div class="historico">
+    <p>{{ digitadas }}</p>
   </div>
+  
+  <div class="calculadora">
+    <div class="numerais">
+      <div>
+        <button (click)="getValueNumbers($event)" value="1">1</button>
+        <button (click)="getValueNumbers($event)" value="2">2</button>
+        <button (click)="getValueNumbers($event)" value="3">3</button>
+      </div>
+      <div>
+        <button (click)="getValueNumbers($event)" value="4">4</button>
+        <button (click)="getValueNumbers($event)" value="5">5</button>
+        <button (click)="getValueNumbers($event)" value="6">6</button>
+      </div>
+      <div>
+        <button (click)="getValueNumbers($event)" value="7">7</button>
+        <button (click)="getValueNumbers($event)" value="8">8</button>
+        <button (click)="getValueNumbers($event)" value="9">9</button>
+      </div>
+      <div>
+        <button (click)="getValueNumbers($event)" value="0">0</button>
+        <button (click)="doOperation()" value="=">=</button>
+      </div>
+    </div>
+    <div class="operacores">
+      <div>
+        <button (click)="getValueOperations($event)" value="/">/</button>
+      </div>
+      <div>
+        <button (click)="getValueOperations($event)" value="x">x</button>
+      </div>
+      <div>
+        <button (click)="getValueOperations($event)" value="-">-</button>
+      </div>
+      <div>
+        <button (click)="getValueOperations($event)" value="+">+</button>
+      </div>
+    </div>
+  </div>  
 </div>
-
