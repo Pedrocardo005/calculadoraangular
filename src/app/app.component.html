@@ -1,5 +1,5 @@
 <div class="box">
-  <div class="textos">
+  <div class="display">
     <div>
       <p *ngFor="let resultado of resultados">
         {{ resultado }}
@@ -11,7 +11,7 @@
     </div>
   </div>
   
-  <div class="calculadora">
+  <div class="teclas">
     <div class="numerais">
       <div>
         <button (click)="getValueNumbers($event)" value="1">1</button>
@@ -28,12 +28,11 @@
         <button (click)="getValueNumbers($event)" value="8">8</button>
         <button (click)="getValueNumbers($event)" value="9">9</button>
       </div>
-      <div>
+      <div class="zero">
         <button (click)="getValueNumbers($event)" value="0">0</button>
-        <button (click)="doOperation()" value="=">=</button>
       </div>
     </div>
-    <div class="operacores">
+    <div class="operacoes">
       <div>
         <button (click)="getValueOperations($event)" value="/">/</button>
       </div>
@@ -46,6 +45,9 @@
       <div>
         <button (click)="getValueOperations($event)" value="+">+</button>
       </div>
+    </div>
+    <div class="equal">
+      <button (click)="doOperation()" value="=">=</button>
     </div>
   </div>  
 </div>
