@@ -1,6 +1,6 @@
 # Calculadora com Angular
 
-Uma calculadora para treinar os meus conhecimentos em Angular.
+Calculadora para treinar os meus conhecimentos em Angular.
 
 Para iniciar o projeto, primeiro faça o clone dele:
 ```bash
